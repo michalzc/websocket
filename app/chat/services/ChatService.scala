@@ -1,6 +1,6 @@
-package chat
+package chat.services
 
-import akka.actor.{Props, ActorRef}
+import akka.actor.{ActorRef, Props}
 
 import scala.concurrent.Future
 

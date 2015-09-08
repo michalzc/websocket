@@ -1,0 +1,38 @@
+@import _root_.views.html.main
+
+@main("Chat application") {
+    <h2>Chat Application</h2>
+
+    <div id="loginPanel">
+        <form id="loginForm">
+            <fieldset >
+                <legend>Please login</legend>
+                <div>
+                    <label for="loginName">Name:</label>
+                    <input type="text" name="loginName" id="loginName" />
+                </div>
+                <div>
+                    <input type="button" name="performLogin" id="performLogin" value="Get in"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="chatPanel">
+        <form id="chatForm">
+            <fieldset>
+                <legend>Chat</legend>
+                <div>
+                    <textarea name="chatContent" id="chatContent"></textarea>
+                </div>
+                chat
+                <div>
+                    <input type="text" name="chatLine" id="chatLine" value="" />
+                    <input type="button" name="chatSend" id="chatSend" value="Send!" >
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="@routes.Assets.versioned("javascripts/chat.js")" type="text/javascript"></script>
+}

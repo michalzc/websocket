@@ -1,11 +1,11 @@
-package chat
+package chat.services
 
 import javax.inject.{Inject, Singleton}
 
 import akka.actor.{ActorRef, ActorSystem}
 import akka.pattern.ask
 import akka.util.Timeout
-import chat.actors.{CanLogIn, ChatClient, ChatRouter, LoggedIn}
+import chat.actors.{CanLogIn, ChatClient, ChatRouter}
 import play.api.Logger
 
 import scala.concurrent.Future

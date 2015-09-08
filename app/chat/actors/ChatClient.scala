@@ -1,6 +1,6 @@
 package chat.actors
 
-import akka.actor.{ActorLogging, Actor, ActorRef, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 
 /**
  * Created by michal on 07.09.15.
@@ -23,5 +23,11 @@ class ChatClient(out: ActorRef, router: ActorRef, name: String) extends Actor wi
 
   override def preStart() {
     router ! LoggedIn(name)
+    log.info(s"Connecting user $name");
+  }
+
+  override def postStop() {
+    router ! Unsubscribe(name)
+    log.info(s"$name user disconnected")
   }
 }

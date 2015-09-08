@@ -23,14 +23,16 @@ class ChatRouter extends Actor with ActorLogging {
 
     case LoggedIn(name) => {
       clients += (name -> sender())
+      clients.values.foreach(_ ! Message("SYSTEM", s"User $name joined"));
     }
 
     case Unsubscribe(name) => {
       clients.get(name).filter(c => c == sender()).foreach{ ref => clients -= name }
+      clients.values.foreach(_ ! Message("SYSTEM", s"User $name left"));
     }
 
     case message @ Message(sender, _) => {
-      clients.filter(_._1 != sender).foreach(_._2 ! message)
+      clients.values.foreach(_ ! message)
     }
   }
 

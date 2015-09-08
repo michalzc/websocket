@@ -1,5 +1,6 @@
 package chat
 
+import chat.services.{ChatServiceAkka, ChatService}
 import play.api.{Configuration, Environment}
 import play.api.inject.{Binding, Module}
 

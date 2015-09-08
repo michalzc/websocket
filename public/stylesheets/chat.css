@@ -1,0 +1,31 @@
+
+#loginPanel {
+	display: none;
+}
+
+#chatPanel {
+	display: none;
+}
+
+#loginForm {
+	width: 20em;
+}
+
+#loginForm > div {
+	padding-top: .2em;
+	padding-bottom: .2em;
+}
+
+#chatPanel {
+	width: 40em;
+	padding: 1em;
+}
+
+#chatPanel textarea {
+	width: 38em;
+	height: 40em;
+}
+
+#chatPanel input[type="text"] {
+	width: 30em;
+}
